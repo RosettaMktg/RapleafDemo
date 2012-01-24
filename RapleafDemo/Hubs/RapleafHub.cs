@@ -22,6 +22,17 @@ namespace RapleafDemo.SignalR
         public int age5;
         public int age6;
         public int age7;
+
+        public int HouseholdIncome;
+        public int LoanToValueRation;
+        public int LikelySmartphoneUser;
+        public int InvestedAssets;
+        public int HomeOwnerStatus;
+        public int HomeMarketValue;
+        public int LengthOfResidence;
+        public int Children;
+        public int MaritalStatus;
+        public int Education;
     }
 
     [HubName("rapleafHub")]
@@ -58,6 +69,34 @@ namespace RapleafDemo.SignalR
                     aggregate.age6++;
                 else if (fields.Age == "65+")
                     aggregate.age7++;
+
+                if (fields.HouseholdIncome)
+                    aggregate.HouseholdIncome++;
+                
+                if (fields.LoanToValueRation)
+                    aggregate.LoanToValueRation++;
+                
+                if (fields.LikelySmartphoneUser)
+                    aggregate.LikelySmartphoneUser++;
+                
+                if (fields.InvestedAssets)
+                    aggregate.InvestedAssets++;
+                if (fields.HomeOwnerStatus)
+                    aggregate.HomeOwnerStatus++;
+                if (fields.HomeMarketValue)
+                    aggregate.HomeMarketValue++;
+                
+                if (fields.LengthOfResidence)
+                    aggregate.LengthOfResidence++;
+                
+                if (fields.Children)
+                    aggregate.Children++;
+                
+                if (fields.MaritalStatus)
+                    aggregate.MaritalStatus++;
+                
+                if (fields.Education)
+                    aggregate.Education++;
 
                 emailAddresses.Add(email);
             }
