@@ -15,6 +15,5 @@ namespace RapleafDemo.Controllers
             return View();
         }
 
-        
     }
 }

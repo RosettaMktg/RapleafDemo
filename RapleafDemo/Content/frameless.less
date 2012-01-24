@@ -1,4 +1,4 @@
-﻿@import 'helpful-LESS-functions.less';
+@import 'helpful-LESS-functions.less';
 /*
     Frameless			<http://framelessgrid.com/>
     by Joni Korpi 		<http://jonikorpi.com/>
@@ -214,6 +214,10 @@ body {
     Typography
 */
 
+#submissionForm, #results {
+	font-size: (@font-size - 4)/16*1em
+}
+
 article p, #colophon p {
     -webkit-hyphens: auto;
        -moz-hyphens: auto;
@@ -264,7 +268,7 @@ h1, #nav span, h2, h3, #nav a, #downloads strong, #promo a, #author a {
 */
 
 @body: rgb(37,37,37);
-@emphasis: rgb(23,23,23);
+@emphasis: #058DC4;
 @aside: rgb(97,97,97);
 @background: rgb(255,255,255);
 @highlight: rgb(232,232,232);
@@ -359,6 +363,28 @@ h1, h2, h3, p, #nav li {
 /*
     Common styles
 */
+
+#Ebene_1 {
+    text-decoration: none;
+    margin-top: 48/@em;
+}
+
+label {
+	clear:both;
+    margin-right: 60px;
+    line-height: @line/60*1em
+}
+
+input {
+	clear:both;
+    width: 250px;
+    margin-bottom: 12/@em;
+}
+
+#submissionDialog {
+    display: none;
+}
+
 
 #masthead, #introduction, article section, #colophon {
     padding: 0 18/@em;
@@ -721,6 +747,15 @@ h1, h2, h3, p, #nav li {
         height: @c3cols;
     }
     
+    #build {
+     border-top: 1/@em solid @emphasis;
+     margin-top: 40/@em;
+    }
+    #colophon {
+        margin-top: 40/@em;
+        border-top: 1/@em solid @emphasis;
+        padding-top: 11/@em;
+    }
 }
 
 
@@ -842,6 +877,15 @@ h1, h2, h3, p, #nav li {
         .col23, .col24 {
             background: @emphasis;
         }
+    #build {
+     border-top: 2/@em solid @emphasis;
+     margin-top: 72/@em;
+    }
+    #colophon {
+        margin-top: 72/@em;
+        border-top: 2/@em solid @emphasis;
+        padding-top: 22/@em;
+    }
     
     #build .wrapper {
         position: relative;
@@ -862,11 +906,7 @@ h1, h2, h3, p, #nav li {
             width: @c4cols - (4/@em);
         }
 
-    #colophon {
-        margin-top: 72/@em;
-        border-top: 2/@em solid @emphasis;
-        padding-top: 22/@em;
-    }
+    
         
         #follow {
             float: left;
