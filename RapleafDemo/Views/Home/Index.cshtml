@@ -4,7 +4,7 @@
 }
 
 <header id="masthead">
-    <h1>Rapleaf/Codemash Demo</h1>
+    <h1>Rapleaf Demo</h1>
     
     <p>By Kevin Deenanauth</p>
 
@@ -236,6 +236,14 @@
             }
         };
 
+        var evalField2 = function (o, f, n) {
+            if (typeof o[f] == "boolean") {
+                return "<b>" + n + "</b>: " + (o[f] ? "Available" : "Not available") + "<br />";
+            } else {
+                return "<b>" + n + "</b>: " + (o[f] == "" ? 0 : o[f]) + "<br />";
+            }
+        };
+
         $(function () {
             $("#submissionDialog").hide();
             // Proxy created on the fly
@@ -263,20 +271,36 @@
                 $("#loadingImg").hide();
                 $("#results").show();
 
-                //$('#messages').append('<li>' + message + '</li>');
             };
+
+            rapleafHub.updateAggregate = function (r) {
+                $("#Ebene_1").effect("highlight", {}, 1000);
+                console.log(r);
+                $("#liveStats").html(
+                    evalField2(r, "totalCount", "Total Count") +
+                    evalField2(r, "numMale", "Number Male") +
+                    evalField2(r, "numFemale", "Number Female") +
+                    evalField2(r, "age1", "Age 18-20") +
+                    evalField2(r, "age2", "Age 21-24") +
+                    evalField2(r, "age3", "Age 25-34") +
+                    evalField2(r, "age4", "Age 35-44") +
+                    evalField2(r, "age5", "Age 45-54") +
+                    evalField2(r, "age6", "Age 55-64") +
+                    evalField2(r, "age7", "Age 65+")
+                );
+            };
+
             console.log("starting connection");
             // Start the connection
             $.connection.hub.start();
-
-            /*var stream = new PageStream().connect();
-            stream.eventReceived = function (type, data) {
-                console.log(data);
-            };*/
-
-
         });
     </script>
+</section>
+<section id="faq">
+    <h2>Live stats</h2>
+    <div id="liveStats">
+    
+    </div>
 </section>
 
 </div>

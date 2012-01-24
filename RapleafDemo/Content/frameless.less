@@ -363,7 +363,10 @@ h1, h2, h3, p, #nav li {
 /*
     Common styles
 */
-
+#faq {
+     clear: both;
+}
+ 
 #Ebene_1 {
     text-decoration: none;
     margin-top: 48/@em;
@@ -724,7 +727,7 @@ input {
 @media screen and (min-width: 30em) {
     
     #masthead, #introduction, article section, #colophon {
-        width: @c6cols;
+        width: @c4cols;
     }
     
     #masthead h1, #masthead p, #introduction span, #follow span {
@@ -755,6 +758,10 @@ input {
         margin-top: 40/@em;
         border-top: 1/@em solid @emphasis;
         padding-top: 11/@em;
+    }
+    #faq {
+     border-top: 1/@em solid @emphasis;
+     margin-top: 40/@em;
     }
 }
 
@@ -877,6 +884,10 @@ input {
         .col23, .col24 {
             background: @emphasis;
         }
+    #faq {
+     border-top: 2/@em solid @emphasis;
+     margin-top: 72/@em;
+    }
     #build {
      border-top: 2/@em solid @emphasis;
      margin-top: 72/@em;
@@ -954,7 +965,7 @@ input {
 */
 
 @media screen and (min-width: 118em) {
-
+    
     #masthead, article .container, #introduction, #colophon {
         width: @c13cols+@c13cols+(24/@em);
         margin-left: auto;
@@ -976,6 +987,7 @@ input {
     #masthead h1 {
         .enormous();
         letter-spacing: 2/72*1em;
+        max-width: @c1cols/3;
     }
     
     #masthead p {
@@ -1040,5 +1052,9 @@ input {
             clear: none;
             padding: 0;
         }
-    
+    #faq {
+        padding-bottom: 96/@em;
+        margin-left: 0;
+        width: @c12cols;
+    }
 }
